@@ -4,17 +4,19 @@
   "private": true,
   "homepage": "http://naohashizume.github.io/react-to-do",
   "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.2"
+    "react": "16",
+    "react-dom": "16",
+    "react-scripts": "3.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,6 +34,29 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1"
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-syntax-jsx": "^7.12.1",
+    "@babel/plugin-transform-react-jsx": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "@cypress/instrument-cra": "1.4.0",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "babel-jest": "^26.6.1",
+    "cypress": "4.12.1",
+    "cypress-react-unit-test": "4.16.7",
+    "eslint": "^7.12.1",
+    "eslint-plugin-react": "^7.21.5",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.1",
+    "start-server-and-test": "1.11.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   }
 }

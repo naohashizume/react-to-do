@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './App.css';
+// import './App.css';
 
-function Todo({ todo, index, completeTodo, deleteTodo }) {
+export function Todo({ todo, index, completeTodo, deleteTodo }) {
   return (
     <div
       className="todo"
@@ -16,7 +16,7 @@ function Todo({ todo, index, completeTodo, deleteTodo }) {
   );
 }
 
-function TodoForm({ addTodo }) {
+export function TodoForm({ addTodo }) {
   const [value, setValue] = useState('');
   const handleSubmit = e => {
     e.preventDefault();
@@ -27,6 +27,7 @@ function TodoForm({ addTodo }) {
   return (
     <form onSubmit={handleSubmit}>
       <input
+        data-testid="todo-form"
         type="text"
         className="input"
         value={value}
